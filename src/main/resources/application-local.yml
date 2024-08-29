@@ -12,5 +12,7 @@ spring:
             format_sql: ${JPA_HIBERNATE_FORMAT_SQL:true}
             show_sql: ${JPA_HIBERNATE_SHOW_SQL:true}
 
-
-
+seeder:
+  enabled: false
+  author-count: 10
+  book-for-each-author: 5

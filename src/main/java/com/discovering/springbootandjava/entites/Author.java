@@ -11,7 +11,12 @@ import java.util.Set;
 @Setter @Getter
 public class Author {
 
-    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE , generator = "author_seq")
+    @SequenceGenerator(
+            name = "author_seq",
+            allocationSize = 1,
+            initialValue = 100
+    )
     private Long id;
 
     private String firstName;

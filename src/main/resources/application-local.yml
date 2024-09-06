@@ -9,8 +9,8 @@ spring:
       ddl-auto: ${JPA_HIBERNATE_DDL_AUTO:update}
     properties:
         hibernate:
-            format_sql: ${JPA_HIBERNATE_FORMAT_SQL:true}
-            show_sql: ${JPA_HIBERNATE_SHOW_SQL:true}
+            format_sql: ${JPA_HIBERNATE_FORMAT_SQL:false}
+            show_sql: ${JPA_HIBERNATE_SHOW_SQL:false}
 
 seeder:
   enabled: false

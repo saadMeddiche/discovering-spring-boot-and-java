@@ -22,8 +22,6 @@ public class AuthorAndBookSeeder {
 
     private final SeederConfig seederConfig;
 
-    private final AuthorRepository authorRepository;
-
     @Bean
     public CommandLineRunner seedData(AuthorRepository authorRepository) {
         return _ -> {

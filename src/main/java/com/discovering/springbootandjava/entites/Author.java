@@ -10,6 +10,9 @@ import java.util.Set;
 
 @Entity
 @Setter @Getter
+@NamedEntityGraph(name = "Author.books",
+        attributeNodes = @NamedAttributeNode("books")
+)
 public class Author {
 
     @Id @GeneratedValue(strategy = GenerationType.SEQUENCE , generator = "author_seq")
@@ -27,7 +30,7 @@ public class Author {
     @Formula("CONCAT(first_name, ' ', last_name)")
     private String fullName;
 
-    @OneToMany(cascade = CascadeType.PERSIST , mappedBy = "author")
+    @OneToMany(cascade = CascadeType.PERSIST , fetch = FetchType.EAGER , mappedBy = "author")
     @JsonIgnoreProperties("author")
     private Set<Book> books;
 }

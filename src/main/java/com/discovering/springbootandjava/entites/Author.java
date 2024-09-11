@@ -1,5 +1,6 @@
 package com.discovering.springbootandjava.entites;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -27,5 +28,6 @@ public class Author {
     private String fullName;
 
     @OneToMany(cascade = CascadeType.PERSIST , mappedBy = "author")
+    @JsonIgnoreProperties("author")
     private Set<Book> books;
 }

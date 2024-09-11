@@ -3,6 +3,7 @@ package com.discovering.springbootandjava.services;
 import com.discovering.springbootandjava.entites.Author;
 import com.discovering.springbootandjava.repositories.AuthorRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,6 +14,7 @@ public class AuthorService {
 
     private final AuthorRepository authorRepository;
 
+    @Cacheable("authors")
     public List<Author> getAuthors() {
         return authorRepository.findAll();
     }

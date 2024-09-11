@@ -24,7 +24,7 @@ public class Author {
 
     private String lastName;
 
-    @Transient @Formula("CONCAT(first_name, ' ', last_name)")
+    @Formula("CONCAT(first_name, ' ', last_name)")
     private String fullName;
 
     @OneToMany(cascade = CascadeType.PERSIST , mappedBy = "author")

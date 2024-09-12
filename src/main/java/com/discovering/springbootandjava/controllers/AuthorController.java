@@ -25,5 +25,13 @@ public class AuthorController {
         return ResponseEntity.ok(authors);
     }
 
+    @GetMapping(("/no-return"))
+    public ResponseEntity<List<Author>> getAuthorsNoReturn() {
+
+        authorService.getAuthors();
+
+        return ResponseEntity.ok().build();
+    }
+
 
 }

@@ -23,4 +23,11 @@ public class BookController {
 
         return ResponseEntity.ok(books);
     }
+
+    @GetMapping("/no-return")
+    public ResponseEntity<List<Book>> getBooksNoReturn() {
+        bookService.getBooks();
+
+        return ResponseEntity.ok().build();
+    }
 }

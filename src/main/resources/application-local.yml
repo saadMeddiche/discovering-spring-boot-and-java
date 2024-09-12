@@ -14,5 +14,5 @@ spring:
 
 seeder:
   enabled: false
-  author-count: 10
-  book-for-each-author: 5
+  author-count: 3
+  book-for-each-author: 2

@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import java.util.UUID;
 
@@ -19,7 +21,8 @@ public class Book {
 
     private Double price;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
+    //@Fetch(FetchMode.SELECT)
     @JsonIgnoreProperties("books")
     //@JsonBackReference
     private Author author;

@@ -1,5 +1,6 @@
 package com.discovering.springbootandjava.entites;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -18,8 +19,9 @@ public class Book {
 
     private Double price;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties("books")
+    //@JsonBackReference
     private Author author;
 
 }

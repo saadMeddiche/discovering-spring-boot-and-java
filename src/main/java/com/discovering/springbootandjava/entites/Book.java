@@ -22,7 +22,7 @@ public class Book {
     private Double price;
 
     @ManyToOne
-    //@Fetch(FetchMode.SELECT)
+    //@Fetch(FetchMode.SUBSELECT)
     @JsonIgnoreProperties("books")
     //@JsonBackReference
     private Author author;

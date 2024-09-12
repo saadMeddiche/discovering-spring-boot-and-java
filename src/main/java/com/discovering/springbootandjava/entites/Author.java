@@ -35,8 +35,8 @@ public class Author {
     @Formula("CONCAT(first_name, ' ', last_name)")
     private String fullName;
 
-    @OneToMany(cascade = CascadeType.PERSIST , mappedBy = "author")
-    //@Fetch(FetchMode.SELECT)
+    @OneToMany(cascade = CascadeType.PERSIST , fetch = FetchType.EAGER, mappedBy = "author")
+    //@Fetch(FetchMode.SUBSELECT)
     @JsonIgnoreProperties("author")
     //@JsonManagedReference
     private Set<Book> books;

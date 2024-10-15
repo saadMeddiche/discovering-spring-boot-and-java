@@ -4,9 +4,7 @@ import com.discovering.springbootandjava.entites.Author;
 import com.discovering.springbootandjava.services.AuthorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,6 +28,12 @@ public class AuthorController {
 
         authorService.getAuthors();
 
+        return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteAuthor(@PathVariable Long id) {
+        authorService.deleteAuthor(id);
         return ResponseEntity.ok().build();
     }
 
